@@ -3,9 +3,9 @@ import { Example } from "./Example";
 import styles from "./Example.module.css";
 
 const DEFAULT_EXAMPLES: string[] = [
-    "What is included in my Northwind Health Plus plan that is not in standard?",
-    "What happens in a performance review?",
-    "What does a Product Manager do?"
+    "What is the impact of foreign exchange rates on Apple's financial performance? List this out separately for each reported period.",
+    "How has Apple's revenue from iPhone sales fluctuated across quarters?",
+    "How has Apple's total net sales changed over time?"
 ];
 
 const GPT4V_EXAMPLES: string[] = [
