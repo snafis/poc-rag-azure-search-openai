@@ -1,5 +1,7 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
-
+# @Author: shifath.nafis
+# @Date:   2024-03-28 03:15:18
+# @Last Modified by:   shifath.nafis
+# @Last Modified time: 2024-03-29 18:09:19
 name: azure-search-openai-demo
 metadata:
   template: azure-search-openai-demo@0.0.2-beta
