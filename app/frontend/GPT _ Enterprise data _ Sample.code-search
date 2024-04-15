@@ -1,0 +1,33 @@
+# Query: GPT + Enterprise data | Sample
+# ContextLines: 1
+
+7 results - 1 file
+
+tests/e2e.py:
+   51      page.goto(live_server_url)
+   52:     expect(page).to_have_title("Semantic Search Prototype | GPT + Enterprise data")
+   53  
+
+   70      page.goto(live_server_url)
+   71:     expect(page).to_have_title("Semantic Search Prototype | GPT + Enterprise data")
+   72      expect(page.get_by_role("heading", name="Chat with your data")).to_be_visible()
+
+  132      page.goto(live_server_url)
+  133:     expect(page).to_have_title("Semantic Search Prototype | GPT + Enterprise data")
+  134  
+
+  174      page.goto(live_server_url)
+  175:     expect(page).to_have_title("Semantic Search Prototype | GPT + Enterprise data")
+  176      expect(page.get_by_role("button", name="Developer settings")).to_be_enabled()
+
+  207      page.goto(live_server_url)
+  208:     expect(page).to_have_title("GPT + Enterprise data | Sample")
+  209      expect(page.get_by_role("button", name="Developer settings")).to_be_enabled()
+
+  244      page.goto(live_server_url)
+  245:     expect(page).to_have_title("Semantic Search Prototype | GPT + Enterprise data")
+  246      expect(page.get_by_role("button", name="Developer settings")).to_be_enabled()
+
+  283      page.goto(live_server_url)
+  284:     expect(page).to_have_title("Semantic Search Prototype | GPT + Enterprise data")
+  285  
