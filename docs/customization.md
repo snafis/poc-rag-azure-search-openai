@@ -102,6 +102,10 @@ Once you are running the chat app on your own data and with your own tailored sy
 the next step is to test the app with questions and note the quality of the answers.
 If you notice any answers that aren't as good as you'd like, here's a process for improving them.
 
+
+> As a financial auditor, review the SEC fillings and answer the questions in step-by-step, in chronological order.
+
+
 ### Identify the problem point
 
 The first step is to identify where the problem is occurring. For example, if using the Chat tab, the problem could be:

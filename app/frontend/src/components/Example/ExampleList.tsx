@@ -3,9 +3,9 @@ import { Example } from "./Example";
 import styles from "./Example.module.css";
 
 const DEFAULT_EXAMPLES: string[] = [
-    "What is the impact of foreign exchange rates on Apple's financial performance? List this out separately for each reported period.",
     "How has Apple's revenue from iPhone sales fluctuated across quarters?",
-    "How has Apple's total net sales changed over time?"
+    "Can any trends be identified in Apple's Services segment revenue over the reported periods?",
+    "Has there been any significant change in Apple's operating expenses over the reported quarters? If so, what are the key drivers for this change?"
 ];
 
 const GPT4V_EXAMPLES: string[] = [
