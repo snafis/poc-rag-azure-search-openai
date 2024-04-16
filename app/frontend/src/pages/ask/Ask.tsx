@@ -1,17 +1,17 @@
+import { Checkbox, DefaultButton, IDropdownOption, Panel, Slider, SpinButton, Spinner, TextField } from "@fluentui/react";
 import { useEffect, useRef, useState } from "react";
-import { Checkbox, Panel, DefaultButton, Spinner, Slider, TextField, SpinButton, IDropdownOption, Dropdown } from "@fluentui/react";
 
 import styles from "./Ask.module.css";
 
-import { askApi, configApi, ChatAppResponse, ChatAppRequest, RetrievalMode, VectorFieldOptions, GPT4VInput } from "../../api";
-import { Answer, AnswerError } from "../../components/Answer";
-import { QuestionInput } from "../../components/QuestionInput";
-import { ExampleList } from "../../components/Example";
+import { ChatAppRequest, ChatAppResponse, GPT4VInput, RetrievalMode, VectorFieldOptions, askApi, configApi } from "../../api";
+import { getToken, isLoggedIn, requireAccessControl, useLogin } from "../../authConfig";
 import { AnalysisPanel, AnalysisPanelTabs } from "../../components/AnalysisPanel";
-import { SettingsButton } from "../../components/SettingsButton/SettingsButton";
-import { useLogin, getToken, isLoggedIn, requireAccessControl } from "../../authConfig";
-import { VectorSettings } from "../../components/VectorSettings";
+import { Answer, AnswerError } from "../../components/Answer";
+import { ExampleList } from "../../components/Example";
 import { GPT4VSettings } from "../../components/GPT4VSettings";
+import { QuestionInput } from "../../components/QuestionInput";
+import { SettingsButton } from "../../components/SettingsButton/SettingsButton";
+import { VectorSettings } from "../../components/VectorSettings";
 
 import { useMsal } from "@azure/msal-react";
 import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
@@ -202,7 +202,7 @@ export function Component(): JSX.Element {
                 <h1 className={styles.askTitle}>Ask your data</h1>
                 <div className={styles.askQuestionInput}>
                     <QuestionInput
-                        placeholder="Example: Does my plan cover annual eye exams?"
+                        placeholder="Example: What is the expected effective tax rate for Apple in 2016?"
                         disabled={isLoading}
                         initQuestion={question}
                         onSend={question => makeApiRequest(question)}

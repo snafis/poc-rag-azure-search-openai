@@ -1,33 +1,33 @@
-import { useRef, useState, useEffect } from "react";
-import { Checkbox, Panel, DefaultButton, TextField, SpinButton, Slider } from "@fluentui/react";
+import { Checkbox, DefaultButton, Panel, Slider, SpinButton, TextField } from "@fluentui/react";
 import { SparkleFilled } from "@fluentui/react-icons";
 import readNDJSONStream from "ndjson-readablestream";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./Chat.module.css";
 
+import { useMsal } from "@azure/msal-react";
 import {
-    chatApi,
-    configApi,
-    RetrievalMode,
+    ChatAppRequest,
     ChatAppResponse,
     ChatAppResponseOrError,
-    ChatAppRequest,
+    GPT4VInput,
     ResponseMessage,
+    RetrievalMode,
     VectorFieldOptions,
-    GPT4VInput
+    chatApi,
+    configApi
 } from "../../api";
-import { Answer, AnswerError, AnswerLoading } from "../../components/Answer";
-import { QuestionInput } from "../../components/QuestionInput";
-import { ExampleList } from "../../components/Example";
-import { UserChatMessage } from "../../components/UserChatMessage";
+import { getToken, isLoggedIn, requireAccessControl, useLogin } from "../../authConfig";
 import { AnalysisPanel, AnalysisPanelTabs } from "../../components/AnalysisPanel";
-import { SettingsButton } from "../../components/SettingsButton";
+import { Answer, AnswerError, AnswerLoading } from "../../components/Answer";
 import { ClearChatButton } from "../../components/ClearChatButton";
-import { useLogin, getToken, isLoggedIn, requireAccessControl } from "../../authConfig";
-import { VectorSettings } from "../../components/VectorSettings";
-import { useMsal } from "@azure/msal-react";
-import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
+import { ExampleList } from "../../components/Example";
 import { GPT4VSettings } from "../../components/GPT4VSettings";
+import { QuestionInput } from "../../components/QuestionInput";
+import { SettingsButton } from "../../components/SettingsButton";
+import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
+import { UserChatMessage } from "../../components/UserChatMessage";
+import { VectorSettings } from "../../components/VectorSettings";
 
 const Chat = () => {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
@@ -359,7 +359,7 @@ const Chat = () => {
                     <div className={styles.chatInput}>
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. does my plan cover annual eye exams?)"
+                            placeholder="Type a new question (e.g. What is the expected effective tax rate for Apple in 2016?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question)}
                         />
